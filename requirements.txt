@@ -1,7 +1,7 @@
-fastapi
-uvicorn
+fastapi==0.115.12
+uvicorn==0.34.2
 psycopg2-binary==2.9.12
-python-jose
-passlib[bcrypt]
-python-dotenv
-email-validator
+python-jose==3.4.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.1.0
+email-validator==2.2.0
