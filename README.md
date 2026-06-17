@@ -1,55 +1,88 @@
-# Personal Finance Management API
+````md
+# Personal Finance Budget Management System
 
-A FastAPI-based backend application for managing personal finances. This API allows users to securely register, authenticate, and manage their financial records such as income, expenses, and budgeting information.
+## Overview
+
+The Personal Finance Budget Management System is a RESTful API built using FastAPI that enables users to manage their personal finances efficiently. The application provides features for user authentication, expense tracking, category management, budget planning, and financial reporting. It uses PostgreSQL as the database backend and JWT-based authentication to ensure secure access to user data.
+
+---
 
 ## Features
 
-* User Registration and Authentication
-* Secure Password Hashing
-* JWT-Based Authentication
-* Manage Income Records
-* Manage Expense Records
-* PostgreSQL Database Integration
-* Environment Variable Configuration
-* RESTful API Design
-* Input Validation using Pydantic
+### User Authentication
+- User registration and login
+- JWT-based authentication and authorization
+- Secure password hashing
 
-## Tech Stack
+### Expense Management
+- Add, update, and delete expenses
+- Track expenses across different categories
+- View expense history
 
-* FastAPI
-* PostgreSQL
-* SQL
-* Python
-* JWT Authentication
-* Passlib (Password Hashing)
-* Psycopg2
-* Python Dotenv
+### Category Management
+- Create and manage expense categories
+- Organize spending records efficiently
+
+### Budget Management
+- Create monthly or category-specific budgets
+- Monitor spending against budget limits
+- Receive insights into budget utilization
+
+### Reporting
+- Generate expense summaries
+- Analyze spending patterns
+- View financial reports and dashboard statistics
+
+---
+
+## Technology Stack
+
+| Component | Technology |
+|------------|------------|
+| Backend Framework | FastAPI |
+| Database | PostgreSQL |
+| Authentication | JWT (JSON Web Tokens) |
+| Password Security | Argon2 |
+| Database Driver | Psycopg2 |
+| Environment Management | Python Dotenv |
+
+---
 
 ## Project Structure
 
 ```text
-PersonalFinance/
+personal_finance_budget/
 │
-├── main.py
-├── database.py
 ├── auth.py
-├── models.py
+├── database.py
 ├── schemas.py
+├── main.py
 ├── requirements.txt
 ├── .env
 └── README.md
-```
+````
+
+### Description
+
+* `main.py` – Application entry point and API routes
+* `auth.py` – Authentication and JWT token handling
+* `database.py` – Database connection and configuration
+* `schemas.py` – Request and response validation models
+* `requirements.txt` – Project dependencies
+* `.env` – Environment variables and configuration
+
+---
 
 ## Installation
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/aarya123321/Personalfinance.git
-cd Personalfinance
+git clone https://github.com/your-username/personal-finance-budget.git
+cd personal-finance-budget
 ```
 
-### Create Virtual Environment
+### Create a Virtual Environment
 
 ```bash
 python -m venv venv
@@ -57,13 +90,13 @@ python -m venv venv
 
 Activate the environment:
 
-Windows
+**Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-Mac/Linux
+**Linux/macOS**
 
 ```bash
 source venv/bin/activate
@@ -75,78 +108,122 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Environment Variables
+---
 
-Create a `.env` file in the root directory:
+## Database Configuration
+
+Create a PostgreSQL database and configure the environment variables in the `.env` file.
+
+Example:
 
 ```env
-DATABASE_URL=postgresql://username:password@localhost:5432/personalfinance
+DATABASE_URL=postgresql://username:password@localhost:5432/finance_db
+
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
 
-## Run the Application
+---
+
+## Running the Application
+
+Start the development server using:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Application will be available at:
+The application will be available at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
+---
+
 ## API Documentation
 
-Swagger UI:
+FastAPI automatically generates API documentation.
+
+### Swagger UI
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-ReDoc:
+### ReDoc
 
 ```text
 http://127.0.0.1:8000/redoc
 ```
 
-## Example Endpoints
+---
+
+## Core API Endpoints
 
 ### Authentication
 
-| Method | Endpoint  | Description                 |
-| ------ | --------- | --------------------------- |
-| POST   | /register | Register a new user         |
-| POST   | /login    | Login and receive JWT token |
+| Method | Endpoint  | Description                                 |
+| ------ | --------- | ------------------------------------------- |
+| POST   | /register | Register a new user                         |
+| POST   | /login    | Authenticate user and generate access token |
 
-### Finance Management
+### Categories
 
-| Method | Endpoint           | Description          |
-| ------ | ------------------ | -------------------- |
-| GET    | /transactions      | Get all transactions |
-| POST   | /transactions      | Add transaction      |
-| PUT    | /transactions/{id} | Update transaction   |
-| DELETE | /transactions/{id} | Delete transaction   |
+| Method | Endpoint    |
+| ------ | ----------- |
+| POST   | /categories |
+| GET    | /categories |
 
-## Testing
+### Expenses
 
-You can test the API using:
+| Method | Endpoint       |
+| ------ | -------------- |
+| POST   | /expenses      |
+| GET    | /expenses      |
+| PUT    | /expenses/{id} |
+| DELETE | /expenses/{id} |
 
-* Postman
-* Swagger UI
-* Thunder Client
+### Budgets
 
-## Future Improvements
+| Method | Endpoint |
+| ------ | -------- |
+| POST   | /budgets |
+| GET    | /budgets |
 
-* Monthly Budget Tracking
-* Financial Reports
-* Expense Categories
-* Data Visualization Dashboard
-* Email Notifications
-* Multi-user Support
+### Reports
+
+| Method | Endpoint   |
+| ------ | ---------- |
+| GET    | /reports   |
+| GET    | /dashboard |
+
+---
+
+## Security
+
+* JWT-based authentication
+* Secure password hashing
+* Protected API endpoints
+* Environment-based configuration
+* Database transaction handling
+
+---
+
+## Future Enhancements
+
+* Export reports to PDF and Excel
+* Recurring expense management
+* Financial analytics and visualization
+* Email notifications and alerts
+* Multi-currency support
+* Mobile application integration
+
+---
 
 ## License
 
-This project is developed for educational and learning purposes.
+This project is licensed under the MIT License.
+
+---
