@@ -4,47 +4,33 @@
 personal_finance_budget/
 │
 ├── app/
-│   ├── auth.py              # Authentication and JWT token handling
-│   ├── database.py          # Database connection and configuration
-│   ├── models.py            # Database models
-│   ├── schemas.py           # Pydantic schemas for request/response validation
-│   ├── routes/              # API route definitions
-│   └── utils.py             # Helper and utility functions
+│   ├── auth.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── routes/
+│   └── utils.py
 │
-├── requirements.txt         # Project dependencies
-├── .env.example             # Example environment variables
-├── README.md                # Project documentation
-└── main.py                  # Application entry point
+├── requirements.txt
+├── .env.example
+├── README.md
+└── main.py
 ```
 
 ### Directory Description
 
-| File/Folder        | Description                                                     |
-| ------------------ | --------------------------------------------------------------- |
-| `main.py`          | Starts the FastAPI application and registers routes             |
-| `app/auth.py`      | Handles authentication, authorization, and JWT token generation |
-| `app/database.py`  | Configures and manages database connections                     |
-| `app/models.py`    | Defines database tables and relationships                       |
-| `app/schemas.py`   | Contains Pydantic models for data validation                    |
-| `app/routes/`      | Contains API endpoint implementations                           |
-| `app/utils.py`     | Utility functions used throughout the application               |
-| `requirements.txt` | Lists project dependencies                                      |
-| `.env.example`     | Template for environment variables                              |
-| `README.md`        | Project documentation and setup instructions                    |
-
-```
-```
-
-### Description
-
-* `main.py` – Application entry point and API routes
-* `auth.py` – Authentication and JWT token handling
-* `database.py` – Database connection and configuration
-* `schemas.py` – Request and response validation models
-* `requirements.txt` – Project dependencies
-* `.env` – Environment variables and configuration
-
----
+| File/Folder        | Description                                           |
+| ------------------ | ----------------------------------------------------- |
+| `main.py`          | Application entry point and route registration        |
+| `app/auth.py`      | Authentication, authorization, and JWT token handling |
+| `app/database.py`  | Database connection and configuration                 |
+| `app/models.py`    | Database models and table definitions                 |
+| `app/schemas.py`   | Request and response validation models                |
+| `app/routes/`      | API endpoint implementations                          |
+| `app/utils.py`     | Helper and utility functions                          |
+| `requirements.txt` | Project dependencies                                  |
+| `.env.example`     | Example environment variables                         |
+| `README.md`        | Project documentation                                 |
 
 ## Installation
 
@@ -81,8 +67,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
 ## Database Configuration
 
 Create a PostgreSQL database and configure the environment variables in the `.env` file.
@@ -97,11 +81,9 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
 
----
-
 ## Running the Application
 
-Start the development server using:
+Start the development server:
 
 ```bash
 uvicorn main:app --reload
@@ -113,11 +95,9 @@ The application will be available at:
 http://127.0.0.1:8000
 ```
 
----
-
 ## API Documentation
 
-FastAPI automatically generates API documentation.
+FastAPI automatically generates interactive API documentation.
 
 ### Swagger UI
 
@@ -131,48 +111,44 @@ http://127.0.0.1:8000/docs
 http://127.0.0.1:8000/redoc
 ```
 
----
-
 ## Core API Endpoints
 
 ### Authentication
 
-| Method | Endpoint  | Description                                 |
-| ------ | --------- | ------------------------------------------- |
-| POST   | /register | Register a new user                         |
-| POST   | /login    | Authenticate user and generate access token |
+| Method | Endpoint    | Description                                 |
+| ------ | ----------- | ------------------------------------------- |
+| POST   | `/register` | Register a new user                         |
+| POST   | `/login`    | Authenticate user and generate access token |
 
 ### Categories
 
-| Method | Endpoint    |
-| ------ | ----------- |
-| POST   | /categories |
-| GET    | /categories |
+| Method | Endpoint      |
+| ------ | ------------- |
+| POST   | `/categories` |
+| GET    | `/categories` |
 
 ### Expenses
 
-| Method | Endpoint       |
-| ------ | -------------- |
-| POST   | /expenses      |
-| GET    | /expenses      |
-| PUT    | /expenses/{id} |
-| DELETE | /expenses/{id} |
+| Method | Endpoint         |
+| ------ | ---------------- |
+| POST   | `/expenses`      |
+| GET    | `/expenses`      |
+| PUT    | `/expenses/{id}` |
+| DELETE | `/expenses/{id}` |
 
 ### Budgets
 
-| Method | Endpoint |
-| ------ | -------- |
-| POST   | /budgets |
-| GET    | /budgets |
+| Method | Endpoint   |
+| ------ | ---------- |
+| POST   | `/budgets` |
+| GET    | `/budgets` |
 
 ### Reports
 
-| Method | Endpoint   |
-| ------ | ---------- |
-| GET    | /reports   |
-| GET    | /dashboard |
-
----
+| Method | Endpoint     |
+| ------ | ------------ |
+| GET    | `/reports`   |
+| GET    | `/dashboard` |
 
 ## Security
 
@@ -180,9 +156,7 @@ http://127.0.0.1:8000/redoc
 * Secure password hashing
 * Protected API endpoints
 * Environment-based configuration
-* Database transaction handling
-
----
+* Database transaction management
 
 ## Future Enhancements
 
@@ -193,10 +167,6 @@ http://127.0.0.1:8000/redoc
 * Multi-currency support
 * Mobile application integration
 
----
-
 ## License
 
 This project is licensed under the MIT License.
-
----
