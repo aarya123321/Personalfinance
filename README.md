@@ -1,66 +1,39 @@
-````md
-# Personal Finance Budget Management System
-
-## Overview
-
-The Personal Finance Budget Management System is a RESTful API built using FastAPI that enables users to manage their personal finances efficiently. The application provides features for user authentication, expense tracking, category management, budget planning, and financial reporting. It uses PostgreSQL as the database backend and JWT-based authentication to ensure secure access to user data.
-
----
-
-## Features
-
-### User Authentication
-- User registration and login
-- JWT-based authentication and authorization
-- Secure password hashing
-
-### Expense Management
-- Add, update, and delete expenses
-- Track expenses across different categories
-- View expense history
-
-### Category Management
-- Create and manage expense categories
-- Organize spending records efficiently
-
-### Budget Management
-- Create monthly or category-specific budgets
-- Monitor spending against budget limits
-- Receive insights into budget utilization
-
-### Reporting
-- Generate expense summaries
-- Analyze spending patterns
-- View financial reports and dashboard statistics
-
----
-
-## Technology Stack
-
-| Component | Technology |
-|------------|------------|
-| Backend Framework | FastAPI |
-| Database | PostgreSQL |
-| Authentication | JWT (JSON Web Tokens) |
-| Password Security | Argon2 |
-| Database Driver | Psycopg2 |
-| Environment Management | Python Dotenv |
-
----
-
 ## Project Structure
 
 ```text
 personal_finance_budget/
 │
-├── auth.py
-├── database.py
-├── schemas.py
-├── main.py
-├── requirements.txt
-├── .env
-└── README.md
-````
+├── app/
+│   ├── auth.py              # Authentication and JWT token handling
+│   ├── database.py          # Database connection and configuration
+│   ├── models.py            # Database models
+│   ├── schemas.py           # Pydantic schemas for request/response validation
+│   ├── routes/              # API route definitions
+│   └── utils.py             # Helper and utility functions
+│
+├── requirements.txt         # Project dependencies
+├── .env.example             # Example environment variables
+├── README.md                # Project documentation
+└── main.py                  # Application entry point
+```
+
+### Directory Description
+
+| File/Folder        | Description                                                     |
+| ------------------ | --------------------------------------------------------------- |
+| `main.py`          | Starts the FastAPI application and registers routes             |
+| `app/auth.py`      | Handles authentication, authorization, and JWT token generation |
+| `app/database.py`  | Configures and manages database connections                     |
+| `app/models.py`    | Defines database tables and relationships                       |
+| `app/schemas.py`   | Contains Pydantic models for data validation                    |
+| `app/routes/`      | Contains API endpoint implementations                           |
+| `app/utils.py`     | Utility functions used throughout the application               |
+| `requirements.txt` | Lists project dependencies                                      |
+| `.env.example`     | Template for environment variables                              |
+| `README.md`        | Project documentation and setup instructions                    |
+
+```
+```
 
 ### Description
 
